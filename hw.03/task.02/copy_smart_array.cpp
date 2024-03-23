@@ -16,6 +16,15 @@ class smart_array{
             length = n;
         }
 
+        smart_array(const smart_array& copied_array){
+            this->length = copied_array.length;
+            this->curr_size = copied_array.curr_size;
+            this->array = new int[length]();
+            for (int i = 0; i < this->curr_size; ++i){
+                *(this->array + i) = *(copied_array.array + i);
+            }
+        }
+
         ~smart_array(){
             delete[] array;
             array = nullptr;
@@ -32,10 +41,10 @@ class smart_array{
         }
 
         int get_element(int n){
-            if (n > length - 1){
+            if (n < 0 || n > length - 1){
                 throw std::runtime_error("Недопустимый индекс при обращении к элементу массива!\n");
 		    }
-		return this->array[n];
+		    return this->array[n];
         }
 
         void prtArray(){
@@ -75,9 +84,11 @@ int main(){
         // std::cout << "\n";
 
 
-        arr = new_array;
+        // arr = new_array;
         // arr.prtArray();
         // new_array.prtArray();
+        // smart_array newest_array(arr);
+        // newest_array.prtArray();
     }
     catch (const std::exception& ex) {
         std::cout << ex.what() << std::endl;

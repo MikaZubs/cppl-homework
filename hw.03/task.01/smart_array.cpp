@@ -8,6 +8,10 @@ class smart_array{
         int* array = NULL;
 
     public:
+
+        smart_array(const smart_array&) = delete;
+        smart_array& operator=(const smart_array&) = delete;
+
         smart_array(int n){
             if (n < 1){
                 throw std::runtime_error("Недопустимый размер создаваемого умного массива!\n");
@@ -33,10 +37,10 @@ class smart_array{
         }
 
         int get_element(int n){
-            if (n > full_size - 1){
+            if (n < 0 || n > full_size - 1){
                 throw std::runtime_error("Недопустимый индекс при обращении к элементу массива!\n");
 		    }
-		return this->array[n];
+		    return this->array[n];
         }
 };
 
