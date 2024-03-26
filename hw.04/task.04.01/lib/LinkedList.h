@@ -5,7 +5,7 @@ class List
 {
 public:
     List();
-    virtual ~List();
+    /* virtual */ ~List();
     bool Empty();
     unsigned long Size();
     void PushFront(int value);
