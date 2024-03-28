@@ -13,6 +13,7 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/test)
 add_subdirectory(Catch2 Catch2-build)
 
 
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 #set(SOURCE_EXE ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 set(SOURCE_EXE ${CMAKE_CURRENT_SOURCE_DIR}/test/test-main.cpp)

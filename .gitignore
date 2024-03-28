@@ -31,6 +31,9 @@
 *.out
 *.app
 
+# Build
+*.build
+
 #Folders
 /.vscode
 **/.vs
@@ -39,3 +42,4 @@
 **/build
 **/bin
 **/Catch2/**
+Catch2/**
